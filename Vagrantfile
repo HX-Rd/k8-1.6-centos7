@@ -1,9 +1,7 @@
 $common_init = <<COMMON_INIT
-sudo update-ca-trust force-enable
-sudo cp /vagrant/certs/websense.crt /etc/pki/ca-trust/source/anchors
-sudo cp /vagrant/certs/w00200.cer /etc/pki/ca-trust/source/anchors
-sudo cp /vagrant/certs/w00402.cer /etc/pki/ca-trust/source/anchors
-sudo update-ca-trust extract
+#sudo update-ca-trust force-enable
+#sudo cp /vagrant/certs/newcert.cer /etc/pki/ca-trust/source/anchors
+#sudo update-ca-trust extract
 sudo yum install ntp -y > /dev/null
 sudo systemctl enable ntpd
 sudo systemctl start ntpd
