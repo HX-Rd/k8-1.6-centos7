@@ -32,6 +32,8 @@ Vagrant.configure(2) do |config|
     m.vm.provision "shell", path: "scripts/base/install-support-packages.sh"
     m.vm.provision "shell", path: "scripts/base/user-pref.sh", privileged: false
     m.vm.provision "shell", path: "scripts/base/install-k8.sh"
+    m.vm.provision "shell", path: "scripts/master/install-etcd.sh"
+    m.vm.provision "shell", path: "scripts/master/start-services.sh"
   end
 
   (1..$worker_count).each do |i|

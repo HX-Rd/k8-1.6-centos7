@@ -5,3 +5,49 @@ kubectl -v
 kubectl --version
 sudo -i
 exit
+cd /etc/kubernetes/
+ls
+mkdir /vagrant/files/k8
+cd /vagrant/files/k8/
+cp /etc/kubernetes/config master-config
+vim
+cd ..
+mkdir etcd
+cd etcd/
+ls
+exit
+sudo -i
+exit
+ls
+etcd
+yum install etcd -y
+cd /etc/etcd/
+ls
+more etcd.conf 
+exit
+ls
+sudo -u
+sudo -i
+exit
+ls
+cd /vagrant/files/etcd/
+cp /etc/etcd/etcd.conf .
+vim
+ls
+cd ..
+ls
+cd k8/
+ls
+cp /etc/kubernetes/apiserver .
+vim
+ls
+cd ..
+ls
+cd ..
+ls
+cd scripts/
+ls
+vim
+ls
+vagrant status
+exit
