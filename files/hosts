@@ -1,7 +1,0 @@
-127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
-::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-
-10.0.1.10 master
-10.0.1.11 mone
-10.0.1.12 mtwo
-10.0.1.13 mthree

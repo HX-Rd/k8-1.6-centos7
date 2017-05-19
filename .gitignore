@@ -1,0 +1,7 @@
+.vagrant/
+.cluster-config.rb
+
+ca-certs/*.cer
+ca-certs/*.crt
+ca-certs/*.pem
+ca-certs/*.pfx

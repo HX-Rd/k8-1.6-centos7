@@ -1,0 +1,7 @@
+exit
+ping w1
+docker -v
+kubectl -v
+kubectl --version
+sudo -i
+exit

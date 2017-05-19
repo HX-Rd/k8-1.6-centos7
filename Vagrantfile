@@ -1,60 +1,64 @@
-$common_init = <<COMMON_INIT
-#sudo update-ca-trust force-enable
-#sudo cp /vagrant/certs/newcert.cer /etc/pki/ca-trust/source/anchors
-#sudo update-ca-trust extract
-sudo yum install ntp -y > /dev/null
-sudo systemctl enable ntpd
-sudo systemctl start ntpd
-sudo yum install vim -y > /dev/null
-sudo yum install unzip -y > /dev/null
-sudo \\cp -rf /vagrant/files/hosts /etc/hosts
-sudo cp /vagrant/files/virt7-docker-common-release.repo /etc/yum.repos.d/virt7-docker-common-release.repo
-sudo yum update
-sudo yum install -y --enablerepo=virt7-docker-common-release kubernetes docker
-COMMON_INIT
+$vb_network = "local_k8s"
+$master_memory = 1024
+$worker_count = 3
+$worker_memory = 1024
 
-$master_init = <<MASTER_INIT
-MASTER_INIT
+CLUSTER_CONFIG = File.expand_path("cluster-config.rb")
+if File.exist?(CLUSTER_CONFIG)
+  require CLUSTER_CONFIG
+end
 
 Vagrant.configure(2) do |config|
-  config.vm.define "master" do |master|
-    master.vm.box = "geerlingguy/centos7"
-    master.vm.network "private_network", ip: "10.0.1.10", virtualbox__intnet: "local_k8s"
-    #master.vm.network "forwarded_port", guest: 80, host: 8099, guest_ip: "10.0.1.2"
-  	master.vm.provider "virtualbox" do |vb|
-      vb.memory = 1024
+  config.vm.define "m1" do |m|
+    m.vm.box = "geerlingguy/centos7"
+    m.vm.hostname = "m1"
+    m.vm.network "private_network", ip: "10.0.1.10", virtualbox__intnet: $vb_network
+    m.vbguest.auto_update = false
+  	m.vm.provider "virtualbox" do |vb|
+      vb.memory = $master_memory
     end
 
-    master.vm.provision "shell", inline: $common_init
-  end
+    m.vm.provision "shell", path: "scripts/base/add-to-hosts.sh", args: ["m1", "10.0.1.10"]
 
-  config.vm.define "mone" do |mone|
-    mone.vm.box = "geerlingguy/centos7"
-    mone.vm.network "private_network", ip: "10.0.1.11", virtualbox__intnet: "local_k8s"
-    mone.vm.provider "virtualbox" do |vb|
-      vb.memory = 1024
+    (1..$worker_count).each do |i|
+      m.vm.provision "shell" do |s|
+        s.path = "scripts/base/add-to-hosts.sh" 
+        s.args = ["w#{i}", "10.0.1.#{50 + i}"]
+      end
     end
 
-    mone.vm.provision "shell", inline: $common_init
+    m.vm.provision "shell", path: "scripts/base/cert-imports.sh"
+    m.vm.provision "shell", path: "scripts/base/add-package-repos.sh"
+    m.vm.provision "shell", path: "scripts/base/install-support-packages.sh"
+    m.vm.provision "shell", path: "scripts/base/user-pref.sh", privileged: false
+    m.vm.provision "shell", path: "scripts/base/install-k8.sh"
   end
 
-  config.vm.define "mtwo" do |mtwo|
-    mtwo.vm.box = "geerlingguy/centos7"
-    mtwo.vm.network "private_network", ip: "10.0.1.12", virtualbox__intnet: "local_k8s"
-    mtwo.vm.provider "virtualbox" do |vb|
-      vb.memory = 1024
+  (1..$worker_count).each do |i|
+    config.vm.define "w#{i}" do |w|
+      w.vm.box = "geerlingguy/centos7"
+      w.vm.network "private_network", ip: "10.0.1.#{50 + i}", virtualbox__intnet: $vb_network
+      w.vm.hostname = "w#{i}"
+      w.vbguest.auto_update = false
+      w.vm.provider "virtualbox" do |vb|
+        vb.memory = $worker_memory
+      end
+
+      w.vm.provision "shell", path: "scripts/base/add-to-hosts.sh", args: ["m1", "10.0.1.10"]
+
+      (1..$worker_count).each do |j|
+        w.vm.provision "shell" do |s|
+          s.path = "scripts/base/add-to-hosts.sh" 
+          s.args = ["w#{i}", "10.0.1.#{50 + j}"]
+        end
+      end
+
+      w.vm.provision "shell", path: "scripts/base/cert-imports.sh"
+      w.vm.provision "shell", path: "scripts/base/add-package-repos.sh"
+      w.vm.provision "shell", path: "scripts/base/install-support-packages.sh"
+      w.vm.provision "shell", path: "scripts/base/user-pref.sh", privileged: false
+      w.vm.provision "shell", path: "scripts/base/install-k8.sh"
     end
-
-    mtwo.vm.provision "shell", inline: $common_init
   end
 
-  config.vm.define "mthree" do |mthree|
-    mthree.vm.box = "geerlingguy/centos7"
-    mthree.vm.network "private_network", ip: "10.0.1.13", virtualbox__intnet: "local_k8s"
-    mthree.vm.provider "virtualbox" do |vb|
-      vb.memory = 1024
-    end
-
-    mthree.vm.provision "shell", inline: $common_init
-  end
 end
