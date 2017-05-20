@@ -51,3 +51,103 @@ vim
 ls
 vagrant status
 exit
+cp /etc/kubernetes/kubelet /vagrant/files/k8/
+cd /vagrant/files/k8/
+ls
+vim
+exit
+sudo -i
+exit
+cp /vagrant/files/k8/kubelet 
+cp /vagrant/files/k8/kubelet .
+ls
+mv kubelet kubelet.tmp
+cat kubelet.tmp 
+cp kubelet.tmp kubelet
+sed -i s/KUBELET_HOSTNAME/KUBELET_HOSTNAME="--hostname-override=w1"/g kubelet
+cat kubelet
+rm kubelet
+cp kubelet.tmp kubelet
+sed -i s/KUBELET_HOSTNAME/KUBELET_HOSTNAME=\"--hostname-override=w1\"/g kubelet
+cat kubelet
+exit
+ls
+cd /etc/kubernetes/
+ls
+exit
+sudo -i
+exit
+cd /etc/etcd
+ls
+exit
+sudo -i
+exit
+kubectl get nodes
+exit
+sudo -i
+exit
+kubectl get nodes
+exit
+sudo -i
+kubectl get nodes
+docker ps
+exit
+kubectl get pods
+cd /vagrant/scripts/
+ls
+cd worker/
+ls
+./start-services.sh 
+more start-services.sh 
+cd ..
+cd master/
+ls
+./start-services.sh 
+kubectl get nodes
+exit
+sudo -i
+exit
+kubectl get nodes
+ls
+cd .kube/
+ls
+cd ..
+ls
+kubectl --version
+ls
+cd /vagrant/files/
+ls
+cd ..
+cd scripts/
+ls
+cd worker/
+ls
+./start-services.sh 
+exit
+sudo -i
+exit
+kubectl get nodes
+ls
+cd /vagrant/scripts/master/
+ls
+./start-services.sh 
+kubectl get nodes
+vim
+cd ..
+ls
+cd ..
+ls
+vim
+exit
+sudo -i
+exit
+kubectl get nodes
+ping w1
+exit
+sudo -i
+exit
+kubectl get nodes
+exit
+ping w1
+sudo -i
+exit

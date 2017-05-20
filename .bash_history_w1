@@ -1,0 +1,18 @@
+cd /etc/kubernetes/
+ls
+vim
+exit
+sudo -i
+exit
+ls
+docker ps -a
+kubectl get nodes
+ls
+cd /etc/kubernetes/
+ls
+vim
+ls
+exit
+docker ps
+sudo -i
+exit

@@ -1,0 +1,17 @@
+Vagrant.configure(2) do |config|
+  config.vm.define "basebox" do |basebox|
+    basebox.vm.box = "geerlingguy/centos7"
+    basebox.vbguest.auto_update = false
+
+    basebox.ssh.insert_key = false
+    basebox.vm.synced_folder ".", "/vagrant"
+
+    basebox.vm.provision "shell", path: "scripts/base/cert-imports.sh"
+    basebox.vm.provision "shell", path: "scripts/base/add-package-repos.sh"
+    basebox.vm.provision "shell", path: "scripts/base/install-support-packages.sh"
+    basebox.vm.provision "shell", path: "scripts/base/user-pref.sh", privileged: false
+    basebox.vm.provision "shell", path: "scripts/base/install-k8.sh"
+    basebox.vm.provision "shell", path: "scripts/base/install-etcd.sh"
+  end
+
+end

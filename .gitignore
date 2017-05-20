@@ -1,5 +1,6 @@
 .vagrant/
 .cluster-config.rb
+.ssh/
 
 ca-certs/*.cer
 ca-certs/*.crt
