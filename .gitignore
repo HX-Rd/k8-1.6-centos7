@@ -6,3 +6,5 @@ ca-certs/*.cer
 ca-certs/*.crt
 ca-certs/*.pem
 ca-certs/*.pfx
+
+join-token

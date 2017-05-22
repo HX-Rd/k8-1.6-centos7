@@ -17,6 +17,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "m1" do |m|
     m.vm.box = $box_name
     m.vm.hostname = "m1"
+    m.vm.network "forwarded_port", guest: 8001, host: 8001
     m.vm.network "private_network", ip: $master_ip , virtualbox__intnet: $vb_network
     m.vbguest.auto_update = false
   	m.vm.provider "virtualbox" do |vb|
@@ -33,8 +34,9 @@ Vagrant.configure(2) do |config|
       end
     end
 
-    m.vm.provision "shell", path: "scripts/master/replace-configs.sh"
-    m.vm.provision "shell", path: "scripts/master/start-services.sh"
+    m.vm.provision "shell", path: "scripts/centos/start-services.sh"
+    m.vm.provision "shell", path: "scripts/master/init-master.sh", args: $master_ip
+    #m.vm.provision "shell", path: "scripts/master/install-webui.sh"
   end
 
   (1..$worker_count).each do |i|
@@ -57,8 +59,8 @@ Vagrant.configure(2) do |config|
         end
       end
 
-      w.vm.provision "shell", path: "scripts/worker/replace-configs.sh", args: "w#{i}"
-      w.vm.provision "shell", path: "scripts/worker/start-services.sh"
+      w.vm.provision "shell", path: "scripts/centos/start-services.sh"
+      w.vm.provision "shell", path: "scripts/worker/join-cluster.sh", args: $master_ip
 
     end
   end

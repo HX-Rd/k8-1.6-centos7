@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 echo "Install K8"
-yum install -y --enablerepo=virt7-docker-common-release kubernetes docker > /dev/null
+yum install -y docker kubelet kubeadm kubectl kubernetes-cni
 echo "Done install K8"

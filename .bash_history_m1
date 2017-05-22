@@ -151,3 +151,424 @@ exit
 ping w1
 sudo -i
 exit
+cd /vagrant/
+ls
+vagrant ls
+vim
+cd
+ls
+kubectl get pods --all-namespaces | grep dashboard
+vim
+exit
+ls
+sudo -i
+vim
+ls
+exit
+cd /vagrant/
+ls
+cd c
+cd scripts/
+ls
+cd master/
+ls
+./install-webui.sh 
+exit
+kubectl proxy
+kubectl proxy -h
+kubectl proxy --accept-hosts=0.0.0.0
+exit
+sudo -i
+exit
+kubectl proxy -h
+kubectl proxy
+ip addr
+kubectl proxy 10.0.0.10
+kubectl proxy --address='10.0.0.10'
+kubectl proxy &
+ls
+curl
+curl 127.0.0.1:8001
+sudo kill -9 4056
+kubectl proxy --address='0.0.0.0'
+kubectl proxy --address='0.0.0.0' &
+ls
+kubectl pods get
+kubectl get pods
+kubectl get nodes
+cd /vagrant/scripts/
+ls
+cd master/
+ls
+cat install-webui.sh 
+kubectl create -f https://git.io/kube-dashboard --validate=false
+kubectl get services
+kubectl get pods --all-namespaces
+kubectl --version
+exit
+nmap -sT -O localhost
+ls
+cd /etc/kubernetes/
+ls
+kubectl --kubeconfig=./admin.conf proxy -p 80
+kubectl --version
+exit
+history | grep proxy
+nmap
+sudo yum install nmap
+nmap -sT -O localhost
+sudo -i
+exit
+cd /etc/
+ls
+cd kubernetes/
+ls
+cd manifests/
+ls
+cd ..
+ls
+cd ..
+ls
+cd
+ls
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd centos/
+ls
+more start-services.sh 
+./start-services.sh 
+systemctl enable kube-proxy kubelet docker
+exit
+kubectl get nodes
+sudo -i
+exit
+cd /vagrant/scripts/
+ls
+cd centos/
+ls
+./start-services.sh 
+kubectl --version
+kubectl -version
+kubectl -v
+kubectl version
+kubeadm init
+net.bridge.bridge-nf-call-iptables = 1
+kubeadm init
+vim /etc/sysctl.conf 
+kubeadm init
+sysctl net.bridge.bridge-nf-call-iptables=1
+sysctl net.bridge.bridge-nf-call-ip6tables=1
+kubeadm init
+exit
+sudo
+sudo -i
+exit
+kubeadm token
+kubeadm token list
+kubeadm token
+kubeadm token list -q
+kubeadm token list --kubeconfig
+kubeadm token list --kubeconfig test.conf
+kubeadm token list
+kubeadm token list | tail -n 1
+kubeadm token list | tail -n 1 | awk '{print $1}'
+kubeadm token list | tail -n 1 | awk '{print $1}' > token
+more token 
+exit
+sudo -i
+exit
+cd /etc/kubernetes/
+grep 10.0.2.15
+grep 10.0.2.15 .
+grep -r 10.0.2.15 .
+exit
+cd /etc/kubernetes/
+ls
+vim admin.conf 
+sudo -i
+exit
+kubectl get nodes
+cd /etc/kubernetes/
+ls
+grep -r 8080 .
+grep -r 10 .
+docker -v
+kubectl --server=10.0.0.10:8080 get nodes
+ls
+cd manifests/
+ls
+vim kube-apiserver.yaml 
+kubectl --server=10.0.0.10:6443 get nodes
+vim kube-apiserver.yaml 
+ls
+cd ..
+ls
+vim admin.conf 
+kubectl --kubeconfig /etc/kubernetes/admin.conf 
+kubectl --kubeconfig /etc/kubernetes/admin.conf get no
+kubectl get nodes
+ls
+cd
+ls
+cd .kube/
+ls
+cp /etc/kubernetes/admin.conf config
+cd
+kubectl get nodes
+exit
+kubectl get nodes
+sudo -o
+sudo -i
+exit
+kubectl get nodes
+cd
+ls
+kubectl get nodes
+cd /home/vagrant/
+ls
+cd
+ls
+mkdir .kube
+cd .kube/
+ls
+cp /etc/kubernetes/admin.conf config
+ls
+kubectl get nodes
+exit
+sudo -i
+exit
+cd /etc/kubernetes/
+ls
+vim
+kubectl get nodes
+curl -L http://127.0.0.1:10250/healthz
+cd /var/log/
+ls
+cd ..
+find -name "kubelet.log"
+docker -version
+docker --version
+exit
+sudo -i
+exit
+kubectl get nodes
+etcd
+journalctl -u kubelet --all
+curl -k https://10.0.0.10:6443/api/v1/nodes?fieldSelector=metadata.name%3Dm1&resourceVersion=0
+curl -k https://10.0.0.10:6443/api/v1/nodes
+exit
+cd .kube/
+ls
+cd c
+cd cache/
+ls
+cd discovery/
+ls
+cd 10.0.0.10_6443/
+ls
+cd ..
+ls
+cd ..
+ls
+vim 
+cd /etc/kubernetes/
+ls
+vim admin.conf 
+vim kubelet.conf 
+cd controller-manager.conf 
+vim controller-manager.conf 
+cd manifests/
+ls
+vim
+cd /vagrant/scripts/
+ls
+cd master/
+ls
+more init-master.sh 
+./init-master.sh 
+ls
+cd ..
+ls
+cd centos/
+ls
+more start-services.sh 
+systemctl stop docker
+systemctl stop kubelet
+systemctl start docker
+systemctl start kubelet
+ls
+kubectl get nodes
+ls
+cd /etc/
+ls
+cd kubernetes/
+
+vim
+systemctl stop kubelet
+systemctl stop docker
+systemctl stop etcd
+systemctl start etcd
+kubectl get nodes
+systemctl start docker
+systemctl start kubelet
+kubelet get nodes
+exit
+kubectl get nodes
+ls
+sudo -i
+curl -k https://10.0.0.10:6443/api/v1/nodes
+ls
+cd
+sudo -i
+ls
+exit
+cd /etc/modules-load.d/
+ls
+cd ..
+ls
+exit
+sudo -i
+exit
+more /etc/sysconfig/docker-storage-setup 
+exit
+kubectl get nodes
+kubectl --help
+kubectl describe node w1
+exit
+sudo -i
+exit
+kubectl get nodes
+systemctl stop kubelet
+systemctl stop docker
+systemctl start docker
+systemctl start kubelet
+kubectl get nodes
+systemctl stop docker
+systemctl start kubelet
+systemctl stop kubelet
+vim /etc/systemd/system/kubelet.service.d/10-kubeadm.conf 
+systemctl stop kubelet
+kuebadm reset
+kubeadm reset
+systemctl daemon-reload
+systemctl stop kubelet
+systemctl stop docker
+ls
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd base/
+ls
+more install-k8.sh 
+cd ..
+cd master/
+ls
+more init-master.sh 
+kubeadm init --apiserver-advertise-address=$1
+kubeadm reset
+systemctl start docker
+systemctl start kubelet
+history | grep conf
+systemctl daemon-reload
+systemctl start kubelet
+systemctl status kubelet.service
+vim /etc/systemd/system/kubelet.service.d/10-kubeadm.conf 
+ls
+systemctl daemon-reload
+systemctl start kubelet
+exit
+kubectl get nodes
+sudo -i
+exit
+vim /etc/systemd/system/kubelet.service.d/10-kubeadm.conf 
+systemctl stop kubectl
+systemctl stop kubelet
+systemctl daemon-reload
+systemctl stop kubelet
+systemctl start kubelet
+vim /etc/systemd/system/kubelet.service.d/10-kubeadm.conf 
+systemctl daemon-reload
+systemctl stop kubelet
+systemctl start kubelet
+ls
+cd -
+cd /etc/systemd/system/
+ls
+more kubelet.service
+cd kubelet.service
+cd kubelet.service.d/
+ls
+more 10-kubeadm.conf 
+exit
+sudo -i
+exit
+sudo -i
+ls
+cd /etc/systemd/system/kubelet.service.d/
+ls
+vim 10-kubeadm.conf 
+systemctl --help
+systemctl --help | grep reload
+systemctl daemon-reload
+systemctl stop kubelet
+systemctl start kubelet
+vim
+systemctl daemon-reload
+systemctl start kubelet
+ls
+kubectl get nodes
+kubectl describe node w1
+kubeadm reset
+ls
+cd /vagrant/scripts/master/
+ls
+more init-master.sh 
+more /etc/sysconfig/docker-storage-setup 
+reboot
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd master/
+ls
+more init-master.sh 
+systemctl start docker
+systemctl start kubelet
+kubeadm init --apiserver-advertise-address=10.0.0.10
+sysctl net.bridge.bridge-nf-call-iptables=1
+sysctl net.bridge.bridge-nf-call-ip6tables=1
+kubeadm init --apiserver-advertise-address=10.0.0.10
+kubectl get nodes
+exit
+ls
+sudo -i
+exit
+kubectl get nodes
+kubectl describe node m1
+cd /etc/systemd/system/kubelet.service.d/
+ls
+vim 10-kubeadm.conf 
+systemctl daemon-reload
+systemctl stop kubectl
+systemctl stop kubelet
+systemctl stop docker
+systemctl start docker
+systemctl start kubelet
+kubectl get nodes
+vim 10-kubeadm.conf 
+systemctl daemon-reload
+systemctl stop kubelet
+systemctl stop docker
+systemctl start docker
+exit
+sudo -i
+exit
+docker --version
+exit
+kubectl get nodes
+exit
+sudo -i
+exit

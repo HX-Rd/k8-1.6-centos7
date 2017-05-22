@@ -3,9 +3,13 @@
 BOX_NAME=hx/k8-centos-v1
 
 TEST_IF_BOX_EXISTS=$(vagrant box list | grep $BOX_NAME)
-if [ "$1" -eq "-f" ]; then
+if [ "$1" = "-f" ]; then
     TEST_IF_BOX_EXISTS=""
     vagrant box remove $BOX_NAME
+    if [ "$?" -ne 0 ]; then
+        echo "Could not remove box, check if you have running machines using the box"
+        exit 1
+    fi
 fi
 if [ "$TEST_IF_BOX_EXISTS" = "" ]; then
     echo "$BOX_NAME does not exist, creating $BOX_NAME"

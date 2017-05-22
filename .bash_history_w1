@@ -16,3 +16,25 @@ exit
 docker ps
 sudo -i
 exit
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd master/
+ls
+more init-master.sh 
+sysctl net.bridge.bridge-nf-call-iptables=1
+sysctl net.bridge.bridge-nf-call-ip6tables=1
+ls
+cd ..
+ls
+cd worker/
+ls
+more join-cluster.sh 
+ping m1
+kubeadm join --token $(cat /vagrant/join-token) m1:6443
+curl https://m1:6443/version
+curl -k https://m1:6443/version
+exit
+sudo -i
+exit
