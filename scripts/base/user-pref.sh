@@ -8,8 +8,6 @@ rm -rf /home/vagrant/lx-pref-master
 rm -f /home/vagrant/lx-pref-master.zip
 sudo ssh-keyscan gitlab.com >> /home/vagrant/.ssh/known_hosts
 sudo ssh-keyscan github.com >> /home/vagrant/.ssh/known_hosts
-git config --global user.name huxley1985
-git config --global user.email huxleygit@gmail.com
 git config --global core.editor vim
 cp /vagrant/.ssh/* /home/vagrant/.ssh/
 sudo mkdir -p /root/.ssh
