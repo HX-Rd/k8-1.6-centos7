@@ -1,4 +1,4 @@
-# k8s-practise
+# k8-1.6-centos7
 
 ## Description
 This project sets up kubernetes 1.6 cluster on centos 7 machines.
