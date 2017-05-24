@@ -3,7 +3,7 @@
 ## Description
 This project sets up kubernetes 1.6 cluster on centos 7 machines.
 
-##Assumptions about your environment
+## Assumptions about your environment
 This setup assumes that you are running on windows with cygwin installed. If this is not the case you will have to modify the BOX_FILE_PATH  in create-base-box.sh
 You will also have to have vagrant installed.
 
