@@ -21,6 +21,7 @@ run
 ```
 This create the basebox
 Setup how big of a cluster you want in cluster-config.rb
-Then run ```
+Then run 
+```bash
 vagrant up
 ```
