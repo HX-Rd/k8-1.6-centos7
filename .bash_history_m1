@@ -572,3 +572,674 @@ kubectl get nodes
 exit
 sudo -i
 exit
+cd /vagrant/scripts/
+ls
+cd master/
+ls
+more install-webui.sh 
+kubectl create -f https://git.io/kube-dashboard --validate=false
+exit
+sudo -i
+exit
+curl -k https://127.0.0.1:8001/ui
+curl -k https://127.0.0.1:8001
+curl -k https://10.0.0.10:8001
+curl http://10.0.0.10:8001
+curl http://10.0.0.10:8001/ui
+kubectl get pods
+ls
+kubectl get services
+ls
+cd /vagrant/scripts/
+ls
+cd master/
+ls
+more install-webui.sh 
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+kubectl proxy &
+curl http://10.0.0.10:8001/ui
+curl -k https://10.0.0.10:8001
+curl -k https://10.0.0.10:8001/ui
+curl -k https://127.0.0.1:8001/ui
+curl http://127.0.0.1:8001/ui
+curl  https://127.0.0.1:8001/ui
+curl  https://localhost:8001/ui
+kill -9 7852
+ls
+kubectl proxy --help
+kubectl proxy --accept-hosts=0.0.0.0
+kubectl proxy --accept-hosts=0.0.0.0 --address=10.0.2.2
+kubectl proxy --accept-hosts='*'
+kubectl proxy --accept-hosts='.*'
+kubectl proxy --accept-hosts='.*' &
+curl -k 127.0.0.1:8001/ui
+curl -k https://127.0.0.1:8001/ui
+curl localhost:8001/custom/api/v1/pods
+exit
+sudo -i
+exit
+kubectl get nodes
+ps aux
+ps aux | grep proxy
+curl -k https://localhost:8001/ui
+curl -k http://localhost:8001/ui
+curl -k https://localhost:443/ui
+curl -I http://localhost:8001
+curl -i -s http://localhost:8001/ui
+curl -i -s http://localhost:8001/ui/
+curl -i -s http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy
+curl -i -s http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/
+ls
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd centos/
+ls
+more restart-network.sh 
+nmcli connection reload
+systemctl restart network.service
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$'
+ps aux | grep proxy
+kill -9 8922
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$'
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+curl -i -s http://localhost:8001/ui
+curl -i -s http://localhost:8001/ui/
+curl -i -s http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/
+kubectl get ep kubernetes-dashboard
+ls
+cd ..
+ls
+cd master/
+ls
+more install-webui.sh 
+kubectl create -f https://git.io/kube-dashboard --validate=false
+kubectl get services
+ls
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+docker ps
+docker ps -a
+cd
+ls
+curl -k http://localhost:8001/ui
+curl -k -s http://localhost:8001/ui/
+turl -k -s http://local
+curl -k -s http://l/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy
+curl -k -s http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy
+curl -k -l -s http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/
+curl -k -s http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/
+curl http://localhost:9090
+curl http://localhost:9091
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd master/
+ls
+more install-webui.sh 
+kubectl get deployments
+kubectl get pods
+kubectl get services
+kubectl get pods
+ls
+kubectl get nodes
+more install-webui.sh 
+kubectl create -f https://git.io/kube-dashboard --validate=false
+exit
+cd .kube/
+ls
+rm config 
+cp /etc/kubernetes/admin.conf config
+kubectl get pods
+cd cache/
+ls
+cd discovery/
+ls
+cd 10.0.0.10_6443/
+ls
+more servergroups.json 
+ls
+kubectl run hello-node --image=hello-node:v1 --port=8080
+kubectl get deployments
+kubectl delete hello-node
+kubectl delete deployment hello-node
+kubectl get deployments
+cd
+cd /vagrant/scripts/
+ls
+cd master/
+ls
+more install-webui.sh 
+kubectl get services
+exit
+ls
+dls
+kubectl get nodes
+sudo -i
+kubectl get pods
+ls
+cd /etc/kubernetes/
+ls
+more admin.conf 
+sudo -i
+exit
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+exit
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+sudo -i
+exit
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+kubectl get deployments
+kubectl proxy --address='0.0.0.0' --port=9090 --accept-hosts='^*$' &
+kill -9 9440
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+kubectl get pods --all-namespaces
+exit
+sudo -i
+exit
+Error: 'dial tcp 10.244.1.2:9090: getsockopt: connection timed out'
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+exit
+sudo -i
+exit
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+kubectl get pods
+cd /vagrant/scripts/
+ls
+cd master/
+ls
+cd ..
+ls
+cd centos/
+ls
+./start-services.sh 
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+kill -9 3966
+kubectl get pods
+cd /vagrant/
+ls
+ping w1
+ls
+cd scripts/
+ls
+cd centos/
+ls
+./restart-network.sh 
+ping w1
+exit
+sudo -i
+exit
+sudo -i
+exit
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+route add -net 10.244.1.2 netmask 255.255.255.255 gw 10.0.0.51
+ip route add -net 10.244.1.2 netmask 255.255.255.255 gw 10.0.0.51
+yum install route -y
+ip route show
+vim /etc/sysconfig/network
+ping w1
+route
+/sbin/route add -net 10.244.1.2 netmask 255.255.255.255 gw 10.0.0.51
+cd /sbin/
+ls
+route
+./route
+yum install net-tools
+route
+route add -net 10.244.1.2 netmask 255.255.255.255 gw 10.0.0.51
+ls
+history
+docker ps -a
+kubectl service --all
+kubectl get serivces
+kubectl get serivce
+kubectl service --help
+kubectl
+kubectl get service
+kubectl get service --all
+kubectl get service -a
+kubectl get deployment -a
+history
+kubectl get clusterrolebinding
+kubectl get clusterrolebinding kubernetes-dashboard
+kubectl describe kubernetes-dashboard
+kubectl describe clusterrolebinding kubernetes-dashboard
+kubectl describe pod kubernetes-dashboard
+kubectl describe service kubernetes-dashboard
+kubectl get --help
+kubectl get pods
+kubectl get replicationcontroller
+kubectl get all
+kubectl get svc/kubernetes
+kubectl describe svc/kubernetes
+curl http://127.0.0.1:8080/apis/extensions/v1beta1
+curl http://127.0.0.1:8001/apis/extensions/v1beta1
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/thirdpartyresources
+curl -X LIST http://127.0.0.1:8001/apis/extenstions/v1beta/thirdpartyresources
+curl -X LIST http://127.0.0.1:8001/apis/extenstions/v1beta/replicasets
+curl -X LIST http://127.0.0.1:8001/apis/extensions/v1beta1/replicasets
+deployments
+curl -X LIST http://127.0.0.1:8001/apis/extensions/v1beta1/deployments
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/deployments
+/apis/extensions/v1beta1/namespaces/kube-system/deployments/kubernetes-dashboard
+curl http://127.0.0.1/apis/extensions/v1beta1/namespaces/kube-system/deployments/kubernetes-dashboard
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/deployments/kubernetes-dashboard
+cd
+ls
+cd .kube/
+ls
+vim
+curl http://127.0.0.1:6443
+curl http://127.0.0.1:6443/apis
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/deployments/kubernetes-dashboard
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/pods
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/deployments
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/deployments/pods
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/deployments/
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/deployments/containers
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/deployments/
+curl http://127.0.0.1:8001/apis/extensions/v1beta1/namespaces/kube-system/pods
+curl http://127.0.0.1:8001/apis/namespaces/kube-system/pods
+curl http://127.0.0.1:8001/apis/namespaces/
+curl http://127.0.0.1:8001/apis/v1/namespaces/
+curl http://127.0.0.1:8001/apis/v1/namespaces/default
+curl http://127.0.0.1:8001/
+curl http://127.0.0.1:8001/ui/
+curl http://127.0.0.1:8001/apis/apps
+curl http://127.0.0.1:8001/apis/v1
+curl http://127.0.0.1:8001/apis/v1/
+curl http://127.0.0.1:8001/api/v1/
+curl http://127.0.0.1:8001/api/v1/namespaces
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status}
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | del(.status.containerStatuses)'
+yum install -y jq
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | del(.status.containerStatuses)'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name } | del(.status.containerStatuses)'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name }'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name="kubernetes-dashboard*", status: .status} | del(.status.containerStatuses)'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name="kubernetes-dashboard-2039414953-pz72q", status: .status} | del(.status.containerStatuses)'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name="kubernetes-dashboard-2039414953-pz72q"'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods -o template
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods -o template --template='{{range.items}}{{range.status}}'
+ls
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name="kubernetes-dashboard*", status: .status} | del(.status.containerStatuses)'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | del(.status.containerStatuses)'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status}'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.podIP="10.244.1.2")'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.podIP=="10.244.1.2")'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.podIP=="10.244.1.2")'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatueses.name=="kubernetes-dashboard")'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatueses[].name=="kubernetes-dashboard")'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP'
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | tr \" \s
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | tr \"
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | sed 's/\"//g'
+exit
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+sudo -i
+exit
+cd /vagrant/scripts/
+ls
+cd post/
+ls
+exit
+sudo -i
+exit
+/vagrant/scripts/post/install-webui.sh 
+vim
+cd /vagrant/scripts/
+ls
+cd post/
+ls
+vim
+./install-webui.sh 
+vim
+./install-webui.sh 
+vim
+more install-webui.sh 
+curl http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g'
+curl -q http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g'
+curl -q http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP'
+curl -q http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")'
+curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g'
+vim
+exit
+sudo -i
+exit
+sudo -i
+exit
+ps aux
+ps aux | grep proxy
+nohub
+nohup
+exit
+sudo -i
+exit
+ls
+cd /vagrant/scripts/post/
+ls
+more install-webui.sh 
+nohup kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+POD_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | sed 's/\"//g')
+echo $POD_IP
+curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | sed 's/\"//g'
+POD_IP=curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | sed 's/\"//g'
+POD=$(echo "Hello")
+$POD
+echo POD
+POD_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | sed 's/\"//g')
+$POD_IP
+echo POD_IP
+echo $POD_IP
+exit
+sudo -i
+exit
+cd /vagrant/scripts/
+ls
+cd post/
+ls
+rm nohup.out 
+vim
+./install-webui.sh 
+more 
+ls
+more install-webui.sh 
+eno $POD_IP
+echo $POD_IP
+POD_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | sed 's/\"//g')
+echo $POD_IP
+more install-webui.sh 
+NOTE_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g')
+route add -net $POD_IP netmask 255.255.255.255 gw $NODE_IP
+route add
+echo $NOTE_IP
+route add -net 10.244.1.2 netmask 255.255.255.255 gw 10.0.0.51
+exit
+sudo -i
+exit
+ls
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd post/
+ls
+./install-webui.sh 
+more install-webui.sh 
+echo $POD_IP
+POD_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | sed 's/\"//g')
+echo $POD_IP
+echo $NODE_IP
+NOTE_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g')
+echo $NODE_IP
+NOTE_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g')
+echo $NODE_IP
+NOTE_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g')
+echo $NODE_IP
+POD_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.podIP' | sed 's/\"//g')
+echo $POD_IP
+curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g'
+NOTE_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g')
+echo $NODE_IP
+curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g'
+BLE=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g')
+$BLE
+NODE_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g')
+echo $NODE_IP
+more install-webui.sh 
+route add -net $POD_IP netmask 255.255.255.255 gw $NODE_IP
+NOTE_IP=$(curl -s http://127.0.0.1:8001/api/v1/namespaces/kube-system/pods | jq '.items[] | { name: .metadata.name, status: .status} | select(.status.containerStatuses[].name=="kubernetes-dashboard")' | jq '.status.hostIP' | sed 's/\"//g')
+echo $NODE_IP
+vim
+cd ..
+ls
+cd master/
+ls
+cd ..
+ls
+cd master/
+ls
+cd ..
+ls
+cd scripts/
+grep -r file .
+ls
+cd base/
+l
+ls
+more install-
+vim
+ls
+cd ..
+ls
+cd centos/
+ls
+more start-services.sh 
+ls
+cd ..
+sl
+ls
+grep -r "-f" .
+cd ..
+vim
+exit
+sudo -i
+exit
+kubectl get nodes
+exit
+sudo -i
+exit
+kubectl get nodes
+cd /vagrant/scripts/post/
+ls
+more install-webui.sh 
+vim
+./install-webui.sh 
+exit
+sudo -i
+exit
+kubectl get nodes
+ps aux | grep proxy
+kubectl get deployments --all
+kubectl get deployments -a
+ls
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd post/
+ls
+./install-webui.sh 
+exit
+sudo -i
+exit
+ps aux | grep proxy
+kill -9 5323
+kill -9 7887
+ls
+cd /vagrant/scripts/
+ls
+cd post/
+ls
+more install-
+more install-webui.sh 
+sudo kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' &
+exit
+sudo -i
+exit
+ps aux | grep proxy
+kill 8292
+ps aux | grep proxy
+kill -9 8675
+kill -9 8683
+ls
+exit
+sudo -i
+exit
+ps aux | grep proxy
+exit
+sudo -i
+exit
+ls
+ps aux | grep proxy
+exit
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd post/
+ls
+./start-proxy.sh 
+vim
+./start-proxy.sh 
+ls
+ps aux | grep proxy
+kill -9 10290
+kill -9 10295
+exit
+sudo -i
+ps aux | grep proxy
+sudp -i
+sudo -i
+exit
+ps aux | grep proxy
+kill 10769
+
+ps aux | grep proxy
+exit
+sudo -i
+exit
+kubectl get nodes
+exit
+sudo -i
+exit
+ls
+kubectl get nodes
+exit
+sudo -i
+exit
+kubectl get nodes
+kubectl get pods -a
+kubectl get pods --all
+kubectl get pods --show-all
+exit
+sudo -i
+exit
+ls
+kubectl get pods -a
+ls
+cd /vagrant/
+ls
+cd scripts/
+ls
+kubectl -v
+kubectl version
+etcd
+yum install etcd -y
+ls
+cd post/
+ls
+more install-
+more install-webui.sh 
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+kubectl get deployments
+kubectl get deployments -a
+kubectl get services
+kubectl get services -a
+ls
+cd
+ls
+cd .kube/
+ls
+cd config 
+more config 
+kubectl describe endpoints --namespace=kube-system
+kubectl get pods --namespace=kube-system
+ls
+cd /vagrant/scripts/
+ls
+cd post/
+ls
+more install-pod-network.sh 
+kubectl apply --filename https://git.io/weave-kube-1.6
+kubectl get pods --namespace=kube-system
+exit
+sudo -i
+exit
+kubectl describe pods --namespace=kube-system
+kubectl get pods --namespace=kube-system
+exit
+sudo -i
+exit
+kubectl get pods --namespace=kube-system
+kubectl get nodes
+kubectl get pods --namespace=kube-system
+cd /vagrant/scripts/
+ls
+cd post/
+ls
+more install-pod-network.sh 
+kubectl delete --filename https://git.io/weave-kube-1.6
+exit
+sudo -i
+exit
+kubectl get pods --namespace=kube-system
+exit
+sudo -i
+exit
+kubectl get nodes --namespace=kube-system
+exit
+sudo -i
+exit
+kubectl get pods --namespace=kube-system
+exit
+sudo -i
+exit
+kubectl get pods --namespace=kube-system
+kubectl version
+ping 10.0.0.10
+ls
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd common/
+ls
+./restart-network.sh 
+kubectl get pods --namespace=kube-system
+exit
+sudo -i
+exit
+kubectl get pods --namespace=kube-system
+exit
+sudo -i
+exit
+kubectl get pods --namespace=kube-system
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd common/
+ks
+ls
+./restart-network.sh 
+kubectl get pods --namespace=kube-system
+kubectl describe pods kube-dns-3913472980-2k04l
+kubectl describe pod kube-dns-3913472980-2k04l
+kubectl describe pod kube-dns-3913472980-2k04l --namespace=kube-system
+kubectl get pods --namespace=kube-system
+exit
+sudo -i
+exit
+ls
+kubectl get pods --namespace=kube-system
+exit
+sudo -i
+exit

@@ -11,5 +11,6 @@ echo "STORAGE_DRIVER=\"overlay\"" >> /etc/sysconfig/docker-storage-setup
 kubeadm token list | tail -n 1 | awk '{print $1}' > /vagrant/join-token
 mkdir -p /root/.kube
 cp /etc/kubernetes/admin.conf /root/.kube/config
-kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml
-kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+#kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml
+#kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply --filename https://git.io/weave-kube-1.6

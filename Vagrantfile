@@ -24,19 +24,23 @@ Vagrant.configure(2) do |config|
       vb.memory = $master_memory
     end
 
-    m.vm.provision "shell", path: "scripts/base/add-to-hosts.sh", args: ["m1", $master_ip ]
-    m.vm.provision "shell", path: "scripts/centos/restart-network.sh"
+    m.vm.provision "shell", path: "scripts/common/restart-network.sh", run: "always"
 
     (1..$worker_count).each do |i|
       m.vm.provision "shell" do |s|
-        s.path = "scripts/base/add-to-hosts.sh" 
+        s.path = "scripts/common/add-to-hosts.sh" 
         s.args = ["w#{i}", "10.0.0.#{50 + i}"]
       end
     end
 
-    m.vm.provision "shell", path: "scripts/centos/start-services.sh"
+    m.vm.provision "shell", path: "scripts/common/start-services.sh"
     m.vm.provision "shell", path: "scripts/master/init-master.sh", args: $master_ip
-    #m.vm.provision "shell", path: "scripts/master/install-webui.sh"
+
+    scripts = Dir.entries('scripts/master-extra').sort
+    scripts.each do |script|
+      next if script == '.' or script == '..' or script == '.placeholder'
+      m.vm.provision "shell", path: "scripts/master-extra/#{script}", privileged: false
+    end
   end
 
   (1..$worker_count).each do |i|
@@ -49,18 +53,25 @@ Vagrant.configure(2) do |config|
         vb.memory = $worker_memory
       end
 
-      w.vm.provision "shell", path: "scripts/base/add-to-hosts.sh", args: ["m1", $master_ip ]
-      w.vm.provision "shell", path: "scripts/centos/restart-network.sh"
+      w.vm.provision "shell", path: "scripts/common/add-to-hosts.sh", args: ["m1", $master_ip ]
+      w.vm.provision "shell", path: "scripts/common/restart-network.sh", run: "always"
 
       (1..$worker_count).each do |j|
-        w.vm.provision "shell" do |s|
-          s.path = "scripts/base/add-to-hosts.sh" 
-          s.args = ["w#{i}", "10.0.0.#{50 + j}"]
+        if i != j
+          w.vm.provision "shell" do |s|
+            s.path = "scripts/common/add-to-hosts.sh" 
+            s.args = ["w#{i}", "10.0.0.#{50 + j}"]
+          end
         end
       end
 
-      w.vm.provision "shell", path: "scripts/centos/start-services.sh"
+      w.vm.provision "shell", path: "scripts/common/start-services.sh"
       w.vm.provision "shell", path: "scripts/worker/join-cluster.sh", args: $master_ip
+      scripts = Dir.entries('scripts/worker-extra').sort
+      scripts.each do |script|
+        next if script == '.' or script == '..' or script == '.placeholder'
+        m.vm.provision "shell", path: "scripts/worker-extra/#{script}", privileged: false
+      end
 
     end
   end

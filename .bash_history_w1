@@ -38,3 +38,16 @@ curl -k https://m1:6443/version
 exit
 sudo -i
 exit
+ls
+kubectl get pods
+exit
+sudo -i
+exit
+cd /vagrant/
+ls
+cd scripts/
+ls
+cd common/
+ls
+./restart-network.sh 
+sudo -i
