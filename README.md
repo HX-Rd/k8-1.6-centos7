@@ -47,3 +47,15 @@ To destroy the cluster, use the vagrant command destroy
 ``` bash
 vagrant destroy -f
 ```
+
+### Adding custom scripts
+If you want to install additional software or configure some thing else, you can place the scripts under
+
+scripts/base-extra/           => Will run on the base image
+scripts/master-extra/         => Will run when the master is created
+scripts/worker-extra/         => Will run when the worker is created
+
+The scripts in these folders will run in alphabetical order, so if the order matters, consider nameing the scripts something like
+001-somename.sh
+002-othername.sh
+...
