@@ -59,3 +59,6 @@ The scripts in these folders will run in alphabetical order, so if the order mat
 001-somename.sh  
 002-othername.sh  
 ...  
+
+### Adding ca certs
+You can add extra ca certs in the ca-certs folder and these will be baked into the base box
